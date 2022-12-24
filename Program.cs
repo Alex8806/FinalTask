@@ -47,7 +47,29 @@ void Print(string[] arr)
     Console.WriteLine("]");
 }
 
-int lenght = 3;
+int GetPositivInt()
+{
+    bool check = false;
+    int num = -1;
+    while (check == false | num < 0)
+    {
+        Console.WriteLine($"Задайте натуральное положительнео число:");
+        check = int.TryParse(Console.ReadLine(), out num);
+        if (check == false)
+        {
+            System.Console.WriteLine("Вы ввели не натуральное число!");
+            continue;
+        }
+        if (num < 0)
+        {
+            System.Console.WriteLine("Вы ввели отрицательное число!");
+            continue;
+        }
+    }
+    return num;
+}
+
+int lenght = GetPositivInt();
 string[] initArray = Zapolnenie(lenght);
 System.Console.WriteLine("Массив:");
 Print(initArray);
