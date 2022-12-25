@@ -51,7 +51,7 @@ int GetPositivInt()
 {
     bool check = false;
     int num = -1;
-    while (check == false | num < 0)
+    while (check == false || num < 0)
     {
         Console.WriteLine($"Задайте натуральное положительнео число:");
         check = int.TryParse(Console.ReadLine(), out num);
